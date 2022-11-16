@@ -1,0 +1,22 @@
+.estiloB{ 
+  background-image: url(../assets/home1366x700.jpg);
+  display: flex;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+
+
+}
+.btnHome{
+  background-color: transparent;
+  border: 3px solid white;
+  color: black;
+  position: absolute;
+  left: 50%;
+  top: 30%
+}
+.logoHome {
+  position: absoluta;
+  
+}
