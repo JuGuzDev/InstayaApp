@@ -16,7 +16,7 @@ function Login() {
             <h1>Creacion de orden </h1>
             <Card 
               cuerpo= {<><LabelInput etiqueta= "nombre" />
-              <LabelInput etiqueta= "Apellido" /> </>}          
+              <LabelInput etiqueta= "Apellido" /><LabelInput etiqueta= "correo" /> </>}          
             />
           </div>
 
