@@ -19,7 +19,7 @@ function App() {
         <Route path='/Update' element = {<Update />} />
         <Route path="/Home" element = {<Home /> } />
         <Route path="/" element = {<Home /> } />
-        <Route path="*" element = {<p> ingreese bien ruta </p>} />
+        <Route path="*" element = {<p> Ingreese bien ruta </p>} />
       </Routes>
     </BrowserRouter>
    

@@ -1,7 +1,13 @@
-.Card{
-  width: 573;
-  height: 420;
-}
 .contenedorPrincipalCard{
-  background-color: rgba(18, 70, 91, 0.05);
+  color: #12465B;
+  
 }
+.card2{
+  width: 700px;
+  min-height: 100px;
+  background-color: #F5F6F7;
+  padding: 25px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 3px 13px 1px rgba(0, 0, 0, 0.15);
+} 

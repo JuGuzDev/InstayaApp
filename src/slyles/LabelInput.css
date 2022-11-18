@@ -1,4 +1,5 @@
-.otra{
+
+/*.otra{
   padding-bottom: 14px;
 }
 .control{
@@ -6,4 +7,5 @@
   border-color: white;
   border-radius: 8px;
   background-color: #fff;
+   border: 2px solid red
 }
