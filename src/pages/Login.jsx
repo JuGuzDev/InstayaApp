@@ -3,6 +3,7 @@ import { Outlet, Link } from "react-router-dom";
 import '../slyles/Login.css'
 import LabelInput from '../components/LabelInput'
 import logoLineal170x50 from '../assets/logolineal170x50.png'
+import Footer from '../components/Footer'
 
 
 function Login() {
@@ -19,7 +20,7 @@ function Login() {
             < LabelInput
               etiqueta= "Usuario"/>
             < LabelInput 
-              etiqueta= "Contraseña"/>
+              etiqueta= "Contraseña" />
 
             <div className="contenedorLink">
               <Link to="/Register">Registrarse</Link>            
@@ -35,6 +36,7 @@ function Login() {
         </div>
 
         <Outlet />
+        
       </div>
       
 

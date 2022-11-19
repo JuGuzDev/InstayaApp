@@ -1,6 +1,6 @@
 import React from "react"
-import '../slyles/Home.css'
-import logoInstaYaSinfondo250x250 from '../assets/logoInstaYaSinfondo250x250.png'
+import "../slyles/Home.css"
+import logoInstaYaSinfondo250x250 from "../assets/logoInstaYaSinfondo250x250.png"
 
 function Home(){
   return (

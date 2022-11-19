@@ -14,14 +14,14 @@ function Create() {
 
     <div>
       <Navigator
-        primero='Inicio'
-        enlaceprim='/'
-        segundo='Seguimiento'
-        enlacesec='/View'
-        tercero='Cerrar sesion'
-        enlaceterc=''
-        cuarto=''
-        enlacecua=''/>
+        primero="Inicio"
+        enlaceprim="/"
+        segundo="Seguimiento"
+        enlacesec="/View"
+        tercero="Cerrar sesion"
+        enlaceterc=""
+        cuarto=""
+        enlacecua=""/>
 
     <div className="container">
       <div className = "contenedorPrincipalCreate" >
@@ -32,7 +32,7 @@ function Create() {
             <div className="container"> 
               <h1 >Creacion de orden </h1>
               <br />
-              <h4 className="h">Crea la orden con los datos de las caracteristicas del paquete, de quien hace el envio y de quien va recibir el envio, todos los tienen que estar ingresados.</h4>
+              <p>Crea la orden con los datos de las caracteristicas del paquete, de quien hace el envio y de quien va recibir el envio, todos los campos tienen que estar ingresados.</p>
 
               <br />
               <br />
@@ -53,13 +53,13 @@ function Create() {
                                 <h4 className="letraRoja">Centimetros</h4>
                               </div>                          
                               <div className="col">                           
-                                <input type="number" className="form-control "/>
+                                <input type="number"  className="form-control " placeholder="L"/>
                               </div>                          
                               <div className="col">
-                                <input type="number" className="form-control "/>
+                                <input type="number" className="form-control " placeholder="W"/>
                               </div>
                               <div className="col">
-                                <input type="number" className="form-control "/>
+                                <input type="number" className="form-control " placeholder="H"/>
                             </div>
 
 
@@ -73,7 +73,7 @@ function Create() {
 
                         <div className="col-4">
                           <LabelInput etiqueta= "Hora" />
-                          <LabelInput etiqueta= "Peso" />
+                          <LabelInput etiqueta= "Peso" placeholder="Kilogramos"/>
                         </div>
                       </div>
 
@@ -89,7 +89,7 @@ function Create() {
                       <br />
                       <LabelInput etiqueta= "Nombre" />
                       <LabelInput etiqueta= "Cedula/NIT" />
-                      <LabelInput etiqueta= "Telefono" />
+                      <LabelInput etiqueta= "Telefono"  type="tel"/>
                       <LabelInput etiqueta= "Direccion" />
                       <LabelInput etiqueta= "Ciudad" />
                       <LabelInput etiqueta= "Pais" />
@@ -115,19 +115,22 @@ function Create() {
             </div>
           </div>
          
-          
+         
           <div className="col-4">
-            <div  className="contenedorImagen">
+            <div  className="contenedorImagenCreate">
               <img src={imagen1} alt="imagen1" className="imagen1"/>
               <img src={imagen2} alt="imagen2" className= "imagen2"/>
               <img src={imagen3} alt="imagen3" className= "imagen3"/> 
 
             </div> 
-          </div>
+          </div> 
+        
+
+       
+
           
 
           <div className="contenedorBtnCreate">
-          <br />
           <br />
             <button className="btnCreate" type="submit">Crear orden</button>
            
@@ -137,6 +140,9 @@ function Create() {
       </div>
 
     </div>
+    <br />
+    <br />
+
         <Footer />
     </div>
     
