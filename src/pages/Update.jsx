@@ -1,4 +1,5 @@
 import React from "react"
+import { Outlet, Link } from "react-router-dom";
 import Card from '../components/Card'
 import LabelInput from "../components/LabelInput";
 import '../slyles/Create.css'
@@ -144,7 +145,8 @@ function Update() {
 
                 <div className="contenedorBtnCreate">
                 <br />
-                  <button className="btnCreate" type="submit">Actualizar</button>
+                <Link to="/View"> {<button className="btnCreate" type="submit">Eliminar orden</button>}</Link>
+                  <button className="btnCreate" type="submit">Actualizar orden</button>
                 
                 </div>
               </div>

@@ -3,7 +3,7 @@ import { Outlet, Link } from "react-router-dom";
 import '../slyles/Login.css'
 import LabelInput from '../components/LabelInput'
 import logoLineal170x50 from '../assets/logolineal170x50.png'
-import Footer from '../components/Footer'
+
 
 
 function Login() {
@@ -28,9 +28,9 @@ function Login() {
           
           </form>
 
-
           <div className="contenedorBtn">
-            <button className="btnLogin" type="submit">Ingresar</button>
+          <Link to="/View"> {<button className="btnLogin" type="submit">Ingresar</button>}</Link>
+            
           </div>
 
         </div>

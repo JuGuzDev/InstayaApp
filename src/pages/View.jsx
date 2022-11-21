@@ -46,9 +46,9 @@ function View() {
                 <tr>
                   <th># Orden</th>
                   <th>Fecha</th>
-                  <th>ciudad origen</th>
-                  <th>direccion origen</th>
-                  <th>ciudad destino</th>
+                  <th>Ciudad origen</th>
+                  <th>Direccion origen</th>
+                  <th>Ciudad destino</th>
                   <th>Direccion destino</th>
                   <th>Estado</th>
                 </tr>
@@ -56,7 +56,7 @@ function View() {
 
               <tbody>
                 <tr>
-                  <td><a href="#" class="link-primary">1</a></td>
+                  <td><a href="/Update" class="link-primary">1</a></td>
                   <td>22-jun-20</td>
                   <td>Bogotá</td>
                   <td>calle 1 carrera 1</td>
@@ -66,7 +66,7 @@ function View() {
                 </tr>
              
                 <tr>
-                <td><a href="#" class="link-primary">27</a></td>
+                <td><a href="/Update" class="link-primary">27</a></td>
                   <td>22-jun-20</td>
                   <td>Bogotá</td>
                   <td>calle 1 carrera 1</td>
@@ -76,7 +76,7 @@ function View() {
                 </tr>
 
                 <tr>
-                <td><a href="#" class="link-primary">2</a></td>
+                <td><a href="/Update" class="link-primary">2</a></td>
                   <td>22-jun-20</td>
                   <td>Bogotá</td>
                   <td>calle 1 carrera 1</td>

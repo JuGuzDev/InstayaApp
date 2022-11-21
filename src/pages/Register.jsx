@@ -1,4 +1,5 @@
 import React from "react"
+import { Outlet, Link } from "react-router-dom";
 import '../slyles/Login.css'
 import '../slyles/Register.css'
 import LabelInput from '../components/LabelInput'
@@ -24,11 +25,10 @@ function Login() {
           etiqueta= "Correo"/>
       </form>
       <div className="contenedorBtn">
-        <button className="btnLogin" type="submit" >Registrar</button>
+        <Link to="/Login"> {<button className="btnLogin" type="submit" >Registrar</button>}</Link>
+      </div>
+
     </div>
-
-  </div>
-
 
   </div>  
 
