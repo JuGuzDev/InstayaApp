@@ -3,6 +3,7 @@ import Navigator from '/src/components/Navigator'
 import Footer from '/src/components/Footer'
 import mapaSeguimiento from '/src/assets/mapaSeguimiento1350x285.jpg'
 import '../slyles/View.css'
+import { Outlet, Link } from "react-router-dom";
 
 
 function View() {
@@ -56,7 +57,10 @@ function View() {
 
               <tbody>
                 <tr>
-                  <td><a href="/Update" class="link-primary">1</a></td>
+                  
+                  <th> 
+                    <Link to= "/Update/1"> 1</Link> 
+                  </th>
                   <td>22-jun-20</td>
                   <td>Bogotá</td>
                   <td>calle 1 carrera 1</td>
@@ -66,7 +70,9 @@ function View() {
                 </tr>
              
                 <tr>
-                <td><a href="/Update" class="link-primary">27</a></td>
+                  <th> 
+                    <Link to= "/Update/27"> 27</Link> 
+                  </th>
                   <td>22-jun-20</td>
                   <td>Bogotá</td>
                   <td>calle 1 carrera 1</td>
@@ -76,7 +82,9 @@ function View() {
                 </tr>
 
                 <tr>
-                <td><a href="/Update" class="link-primary">2</a></td>
+                  <th> 
+                    <Link to= "/Update/1"> 8</Link> 
+                  </th>
                   <td>22-jun-20</td>
                   <td>Bogotá</td>
                   <td>calle 1 carrera 1</td>

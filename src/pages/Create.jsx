@@ -7,9 +7,14 @@ import imagen2 from '../assets/caja2Envio.jpg'
 import imagen3 from '../assets/caja3Envio.jpg'
 import Navigator from '../components/Navigator'
 import Footer from '../components/Footer'
+import {useForm} from "react-hook-form";
 
 
 function Create() {
+
+  const {register, formState: {errors}, handleSubmit} = useForm()
+  const customSubmit = (data) => {console.log(data)}//ojo esto modificar data 
+
   return(
 
     <div>
@@ -23,6 +28,7 @@ function Create() {
         cuarto=""
         enlacecua=""/>
 
+    <form onSubmit={handleSubmit(customSubmit)}>
     <div className="container">
       <div className = "contenedorPrincipalCreate" >
         
@@ -36,6 +42,7 @@ function Create() {
 
               <br />
               <br />
+              
                   <Card 
                     cuerpo= {
                     <>
@@ -45,7 +52,11 @@ function Create() {
                       <div className="row justify-content-evenly">            
                         <div className="col-8">
 
-                          <LabelInput etiqueta= "Fecha" />
+                          <LabelInput 
+                            etiqueta= "Fecha"
+                            id= "fecha_recogida"
+                            tipo= "date"
+                            />
                           <div className="mb-3 row">
                             <div className="row align-items-center">
                               <div className="col">
@@ -68,12 +79,24 @@ function Create() {
 
 
                           </div>
-                            <LabelInput etiqueta= "Delicado" /> 
-                        </div>
+                            <LabelInput 
+                              etiqueta= "Delicado" 
+                              id= "delicado"
+                              tipo= "text" 
+                              placeholder= "Si/No"/> 
+                          </div>
 
                         <div className="col-4">
-                          <LabelInput etiqueta= "Hora" />
-                          <LabelInput etiqueta= "Peso" placeholder="Kilogramos"/>
+                          <LabelInput 
+                            etiqueta= "Hora" 
+                            id= "hora_recogida"
+                            tipo= "time"
+                            placeholder="hh:mm" />
+                          <LabelInput 
+                            etiqueta= "Peso" 
+                            id= "peso"
+                            tipo= "number"
+                            placeholder="Kilogramos"/>
                         </div>
                       </div>
 
@@ -87,12 +110,30 @@ function Create() {
                       <>
                       <h4>Datos origen</h4>
                       <br />
-                      <LabelInput etiqueta= "Nombre" />
-                      <LabelInput etiqueta= "Cedula/NIT" />
-                      <LabelInput etiqueta= "Telefono"  type="tel"/>
-                      <LabelInput etiqueta= "Direccion" />
-                      <LabelInput etiqueta= "Ciudad" />
-                      <LabelInput etiqueta= "Pais" />
+                      <LabelInput 
+                        etiqueta= "Nombre" 
+                        id= "nombre_origen"
+                        tipo= "text"/>
+                      <LabelInput 
+                        etiqueta= "Cedula/NIT"
+                        id= "identificacion_origen"
+                        tipo= "number" />
+                      <LabelInput 
+                        etiqueta= "Telefono" 
+                        id= "telefono_origen"
+                        tipo= "text"/>
+                      <LabelInput 
+                        etiqueta= "Direccion"
+                        id= "direccion_origen"
+                        tipo= "text" />
+                      <LabelInput
+                         etiqueta= "Ciudad"
+                         id= "ciudad_origen"
+                         tipo= "text" />
+                      <LabelInput
+                         etiqueta= "Pais" 
+                         id= "pais_origen"
+                         tipo= "text"/>
                       </>
                     }
                   /> 
@@ -102,12 +143,30 @@ function Create() {
                       <>
                       <h4>Datos destino</h4>
                       <br />
-                      <LabelInput etiqueta= "Nombre" />
-                      <LabelInput etiqueta= "Cedula/NIT" />
-                      <LabelInput etiqueta= "Telefono" />
-                      <LabelInput etiqueta= "Direccion" />
-                      <LabelInput etiqueta= "Ciudad" />
-                      <LabelInput etiqueta= "Pais" />
+                      <LabelInput 
+                        etiqueta= "Nombre"
+                        id= "nombre_destino"
+                        tipo= "text" />
+                      <LabelInput 
+                        etiqueta= "Cedula/NIT" 
+                        id= "identificacion_destino"
+                        tipo= "text"/>
+                      <LabelInput 
+                        etiqueta= "Telefono" 
+                        id= "telefono_destino"
+                        tipo= "text"/>
+                      <LabelInput 
+                        etiqueta= "Direccion"
+                        id= "direccion_destino"
+                        tipo= "text" />
+                      <LabelInput 
+                        etiqueta= "Ciudad" 
+                        id= "ciudad_destino"
+                        tipo= "text"/>
+                      <LabelInput 
+                        etiqueta= "Pais" 
+                        id= "pais_destino"
+                        tipo= "text"/>
                       </>
                     }
                   />                 
@@ -126,9 +185,7 @@ function Create() {
           </div> 
         
 
-       
-
-          
+                
 
           <div className="contenedorBtnCreate">
           <br />
@@ -140,6 +197,7 @@ function Create() {
       </div>
 
     </div>
+    </form>
     <br />
     <br />
 

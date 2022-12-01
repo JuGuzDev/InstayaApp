@@ -1,18 +1,18 @@
 import React from "react"
+import {useForm} from "react-hook-form";
 
 
-function LabelInput({etiqueta}){
+function LabelInput(props){
+
   return(
-    <div >
-      <div className="mb-3 row">
-        <label htmlFor="input{etiqueta}" className="col-sm-2 col-form-label">{etiqueta}</label>
+      <div className="mb-3 row" >
+        <label htmlFor="{input$(props.etiqueta)}" className="col-sm-2 col-form-label">{props.etiqueta}</label>
         <div className="col-sm-10">
-          <input className="form-control " id="input{etiqueta}"/>
+          <input className="form-control " id={props.id} type={props.tipo} placeholder={props.placeholder} required="required"  />        
         </div>
-      </div>
-    </div>
-
+      </div> 
   );
+  
 }
 
 export default LabelInput;

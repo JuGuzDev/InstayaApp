@@ -8,9 +8,14 @@ import imagen2 from '../assets/caja2Envio.jpg'
 import imagen3 from '../assets/caja3Envio.jpg'
 import Navigator from '../components/Navigator'
 import Footer from '../components/Footer'
+import {useForm} from "react-hook-form";
 
 
 function Update() {
+
+  const {register, formState: {errors}, handleSubmit} = useForm()
+  const customSubmit = (data) => {console.log(data)}//ojo esto modificar data 
+
   return(
 
     <div>
@@ -23,8 +28,8 @@ function Update() {
         enlaceterc="/View"
         cuarto="Cerrar sesion"
         enlacecua=""/>   
-
-      <div className="container">
+      <form onSubmit={handleSubmit(customSubmit)}>
+      <div className="container" >
             <div className = "contenedorPrincipalCreate" >
               
               <div className="row justify-content">
@@ -46,7 +51,10 @@ function Update() {
                             <div className="row justify-content-evenly">            
                               <div className="col-8">
 
-                                <LabelInput etiqueta= "Fecha" />
+                                <LabelInput 
+                                  etiqueta= "Fecha"
+                                  id= "fecha_recogida"
+                                  tipo= "date" />
                                 <div className="mb-3 row">
                                   <div className="row align-items-center">
                                     <div className="col">
@@ -54,13 +62,13 @@ function Update() {
                                       <h4 className="letraRoja">Centimetros</h4>
                                     </div>                          
                                     <div className="col">                           
-                                      <input type="number" className="form-control "/>
+                                      <input type="number" className="form-control " placeholder="L"/>
                                     </div>                          
                                     <div className="col">
-                                      <input type="number" className="form-control "/>
+                                      <input type="number" className="form-control" placeholder="W"/>
                                     </div>
                                     <div className="col">
-                                      <input type="number" className="form-control "/>
+                                      <input type="number" className="form-control " placeholder="H"/>
                                   </div>
 
 
@@ -73,8 +81,16 @@ function Update() {
                               </div>
 
                               <div className="col-4">
-                                <LabelInput etiqueta= "Hora" />
-                                <LabelInput etiqueta= "Peso" placeholder="Kilogramos"/>                    
+                                <LabelInput 
+                                  etiqueta= "Hora" 
+                                  id= "hora_recogida"
+                                  tipo= "time"
+                                  placeholder= "hh:mm"/>
+                                <LabelInput  
+                                  etiqueta= "Peso"
+                                  id= "peso"
+                                  tipo= "number" 
+                                  placeholder="En Kilogramos"/>                    
                               </div>
                             </div>
 
@@ -82,15 +98,18 @@ function Update() {
                               <div className="col">                           
                                   <div className=" mb-3 row">
                                     <div className="col">
-                                      <label className="col-sm-2 col-form-label">Delicado</label>
+                                      <label className="col-sm-2 col-form-label" >Delicado</label>
                                     </div>                          
                                     <div className="col">                           
-                                      <input type="text" className="form-control "/>
+                                      <input type="text" className="form-control " placeholder= "Si/No"/>
                                     </div> 
                                   </div>  
                               </div>                          
                               <div className="col">
-                                <LabelInput etiqueta= "Estado" />
+                                <LabelInput 
+                                  etiqueta= "Estado"
+                                  id= "estado"
+                                  tipo= "text" />
                               </div>    
                             </div>                  
                             
@@ -104,12 +123,30 @@ function Update() {
                             <>
                             <h4>Datos origen</h4>
                             <br />
-                            <LabelInput etiqueta= "Nombre" />
-                            <LabelInput etiqueta= "Cedula/NIT" />
-                            <LabelInput etiqueta= "Telefono" />
-                            <LabelInput etiqueta= "Direccion" />
-                            <LabelInput etiqueta= "Ciudad" />
-                            <LabelInput etiqueta= "Pais" />
+                            <LabelInput 
+                              etiqueta= "Nombre"
+                              id= "nombre_origen"
+                              tipo= "text" />
+                            <LabelInput
+                               etiqueta= "Cedula/NIT"
+                               id= "identificacion_origen"
+                               tipo= "number" />
+                            <LabelInput 
+                              etiqueta= "Telefono" 
+                              id= "telefono_origen"
+                              tipo= "tel"/>
+                            <LabelInput 
+                              etiqueta= "Direccion" 
+                              id= "direccion_origen"
+                              tipo= "text"/>
+                            <LabelInput 
+                              etiqueta= "Ciudad" 
+                              id= "ciudad_origen"
+                              tipo= "text"/>
+                            <LabelInput 
+                              etiqueta= "Pais" 
+                              id= "pais_origen"
+                              tipo= "text"/>
                             </>
                           }
                         /> 
@@ -119,12 +156,30 @@ function Update() {
                             <>
                             <h4>Datos destino</h4>
                             <br />
-                            <LabelInput etiqueta= "Nombre" />
-                            <LabelInput etiqueta= "Cedula/NIT" />
-                            <LabelInput etiqueta= "Telefono" />
-                            <LabelInput etiqueta= "Direccion" />
-                            <LabelInput etiqueta= "Ciudad" />
-                            <LabelInput etiqueta= "Pais" />
+                            <LabelInput 
+                              etiqueta= "Nombre" 
+                              id= "nombre_destino"
+                              tipo= "text"/>
+                            <LabelInput 
+                              etiqueta= "Cedula/NIT" 
+                              id= "identificacion_destino"
+                              tipo= "number"/>
+                            <LabelInput 
+                              etiqueta= "Telefono" 
+                              id= "telefono_destino"
+                              tipo= "tel"/>
+                            <LabelInput 
+                              etiqueta= "Direccion"
+                              id= "direccion_destino"
+                              tipo= "text" />
+                            <LabelInput 
+                              etiqueta= "Ciudad" 
+                              id= "ciudad_destino"
+                              tipo= "text"/>
+                            <LabelInput 
+                              etiqueta= "Pais" 
+                              id= "pais_destino"
+                              tipo= "text"/>
                             </>
                           }
                         />                 
@@ -154,6 +209,7 @@ function Update() {
             </div>
 
           </div>
+          </form>
           <br />
           <br />
 
