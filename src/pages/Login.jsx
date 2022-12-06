@@ -9,8 +9,7 @@ import {useForm} from "react-hook-form";
 
 function Login() {
 
-  const {register, formState: {errors}, handleSubmit} = useForm()
-  const customSubmit = (data) => {console.log(data)}//ojo esto modificar data 
+
 
   return(
       <div className= "contenedorPrincipal" >
