@@ -16,7 +16,7 @@ function App() {
         <Route path='/Register' element = {<Register />} />
         <Route path='/Create' element = {<Create />} />
         <Route path='/View' element = {<View />} />
-        <Route path='/Update' element = {<Update />} />
+        <Route path='/Update/:id' element = {<Update />} />
         <Route path="/Home" element = {<Home /> } />
         <Route path="/" element = {<Home /> } />
         <Route path="*" element = {<p> Ingreese bien ruta </p>} />

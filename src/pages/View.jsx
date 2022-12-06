@@ -5,6 +5,27 @@ import mapaSeguimiento from '/src/assets/mapaSeguimiento1350x285.jpg'
 import '../slyles/View.css'
 import { Outlet, Link } from "react-router-dom";
 
+const pedidos = [
+  {
+    id: 1,
+    fecha_recogida: '22-jun-20',
+    ciudad_origen: 'Bogota',
+    direccion_origen: 'call 1 # 34',
+    ciudad_destino: 'Medellin',
+    direccion_destino: 'cra 3 # 5',
+    estado: 'entregado'
+  },
+  {
+    id: 2,
+    fecha_recogida: '4-feb-23',
+    ciudad_origen: 'Tunja',
+    direccion_origen: 'call 2 # 55',
+    ciudad_destino: 'Barranquilla',
+    direccion_destino: 'cra 9 # 50',
+    estado: 'cancelado'
+  }
+]
+
 
 function View() {
   return (
@@ -56,42 +77,23 @@ function View() {
               </thead>
 
               <tbody>
-                <tr>
+                {pedidos.map((pedido, index) => {
                   
-                  <th> 
-                    <Link to= "/Update/1"> 1</Link> 
-                  </th>
-                  <td>22-jun-20</td>
-                  <td>Bogotá</td>
-                  <td>calle 1 carrera 1</td>
-                  <td>Tunja</td>
-                  <td>calle 1 carrera 1</td>
-                  <td>Cumplido</td>
-                </tr>
-             
-                <tr>
-                  <th> 
-                    <Link to= "/Update/27"> 27</Link> 
-                  </th>
-                  <td>22-jun-20</td>
-                  <td>Bogotá</td>
-                  <td>calle 1 carrera 1</td>
-                  <td>Cali</td>
-                  <td>calle 1 carrera 1</td>
-                  <td>Guardado</td>
-                </tr>
+                  return(
+                    <tr key={index}>
+                    
+                    <th> 
+                      <Link to= {"/Update/" + pedido.id}> {pedido.id}</Link> 
+                    </th>
+                    <td>{pedido.fecha_recogida}</td>
+                    <td>{pedido.ciudad_origen}</td>
+                    <td>{pedido.direccion_origen}</td>
+                    <td>{pedido.ciudad_destino}</td>
+                    <td>{pedido.direccion_destino}</td>
+                    <td>{pedido.estado}</td>
+                  </tr>)
+                })}
 
-                <tr>
-                  <th> 
-                    <Link to= "/Update/1"> 8</Link> 
-                  </th>
-                  <td>22-jun-20</td>
-                  <td>Bogotá</td>
-                  <td>calle 1 carrera 1</td>
-                  <td>Villavicencio</td>
-                  <td>calle 1 carrera 1</td>
-                  <td>Cancelado</td>
-                </tr>
 
               </tbody>
             </table>
