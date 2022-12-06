@@ -5,11 +5,13 @@ import '../slyles/Register.css'
 import LabelInput from '../components/LabelInput'
 import logoLineal170x50 from '../assets/logolineal170x50.png'
 import {useForm} from "react-hook-form";
+import {useState} from 'react';
 
 function Register() {
 
   const {register, formState: {errors}, handleSubmit} = useForm()
   const customSubmit = (data) => {console.log(data)}//ojo esto modificar data 
+
   return(
   <div className= "contenedorPrincipal" >
 
@@ -22,11 +24,11 @@ function Register() {
         < LabelInput
             etiqueta= "Nombre"
             id= "nombre"
-            tipo= "text" />
+            tipo= "text"   />
         < LabelInput 
             etiqueta= "Usuario"
             id= "usuario"
-            tipo= "text" />
+            tipo= "text"  />
         < LabelInput 
             etiqueta= "Contraseña" 
             id= "contrasena"

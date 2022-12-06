@@ -18,7 +18,6 @@ function Login() {
         <form onSubmit={handleSubmit(customSubmit)}>
         <div className="contenedorCard" >
 
-        
           <div className="contenedorImagen">
             <img src={logoLineal170x50} alt="logoLineal" width={238} height={60} />
           </div>
