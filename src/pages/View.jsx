@@ -4,30 +4,21 @@ import Footer from '/src/components/Footer'
 import mapaSeguimiento from '/src/assets/mapaSeguimiento1350x285.jpg'
 import '../slyles/View.css'
 import { Outlet, Link } from "react-router-dom";
+import axios from 'axios'
+import { useEffect, useState } from "react"
 
-const pedidos = [
-  {
-    id: 1,
-    fecha_recogida: '22-jun-20',
-    ciudad_origen: 'Bogota',
-    direccion_origen: 'call 1 # 34',
-    ciudad_destino: 'Medellin',
-    direccion_destino: 'cra 3 # 5',
-    estado: 'entregado'
-  },
-  {
-    id: 2,
-    fecha_recogida: '4-feb-23',
-    ciudad_origen: 'Tunja',
-    direccion_origen: 'call 2 # 55',
-    ciudad_destino: 'Barranquilla',
-    direccion_destino: 'cra 9 # 50',
-    estado: 'cancelado'
-  }
-]
+const View = () => {
+    const [pedidos, setPedidos] = useState(null)
 
+    useEffect(() => {
+        axios
+            .get("http://localhost:9000/api/pedidos")
+            .then((response) => {
+                console.log(response.data)
+                setPedidos(response.data)
+            })
+    }, [])
 
-function View() {
   return (
     <div>
       <Navigator
@@ -48,17 +39,9 @@ function View() {
           <br />
           <br />
           <h1>Seguimiento  de ordenes</h1>
-          <p> Puedes hacer seguimiento a todos tus envios solo buscalo en la lista y dar clic en el numero de  la orden o simplemente introduce el numero de la orden en el campo de busqueda</p>
+          <p> Puedes hacer seguimiento a todos tus envios solo buscalo en la lista y dar clic en el numero de  la orden. </p>
           <br />
-          <br />
-           <label > <h4>Número de orden </h4> </label> 
-
-                <div className='col-4' >
-                  <input type="text" placeholder='Buscar' className='form-control ' /> 
-                </div>
-   
-           
-           <br /> 
+    
  
            <div className='cuerpoView' >
            <div className='table-responsive'>
@@ -77,13 +60,13 @@ function View() {
               </thead>
 
               <tbody>
-                {pedidos.map((pedido, index) => {
+                {pedidos !==null ? pedidos.map((pedido, index) => {
                   
                   return(
                     <tr key={index}>
                     
                     <th> 
-                      <Link to= {"/Update/" + pedido.id}> {pedido.id}</Link> 
+                      <Link to= {"/Update/" + pedido._id}> {index}</Link> 
                     </th>
                     <td>{pedido.fecha_recogida}</td>
                     <td>{pedido.ciudad_origen}</td>
@@ -92,9 +75,7 @@ function View() {
                     <td>{pedido.direccion_destino}</td>
                     <td>{pedido.estado}</td>
                   </tr>)
-                })}
-
-
+                }) : ''}  
               </tbody>
             </table>
            </div>

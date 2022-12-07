@@ -19,7 +19,7 @@ function App() {
         <Route path='/Update/:id' element = {<Update />} />
         <Route path="/Home" element = {<Home /> } />
         <Route path="/" element = {<Home /> } />
-        <Route path="*" element = {<p> Ingreese bien ruta </p>} />
+        <Route path="*" element = {<p> Ingrese bien la ruta </p>} />
       </Routes>
     </BrowserRouter>
    

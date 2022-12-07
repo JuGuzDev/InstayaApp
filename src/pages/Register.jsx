@@ -5,7 +5,8 @@ import '../slyles/Register.css'
 import LabelInput from '../components/LabelInput'
 import logoLineal170x50 from '../assets/logolineal170x50.png'
 import {useForm} from "react-hook-form";
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
+import axios from "axios";
 
 function Register() {
 

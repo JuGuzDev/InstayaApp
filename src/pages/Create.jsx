@@ -8,12 +8,43 @@ import imagen3 from '../assets/caja3Envio.jpg'
 import Navigator from '../components/Navigator'
 import Footer from '../components/Footer'
 import {useForm} from "react-hook-form";
+import { useEffect, useState } from "react"
+import axios from "axios"
 
 
 function Create() {
 
-  const {register, formState: {errors}, handleSubmit} = useForm()
-  const customSubmit = (data) => {console.log(data)}//ojo esto modificar data 
+  const customSubmit = (dataForm) => {
+  const pedidoObject = {
+        usuario:dataForm.usuario,
+        fecha_recogida:dataForm.fecha_recogida,
+        hora_recogida:dataForm.hora_recogida,
+        ancho:dataForm.ancho,
+        alto:dataForm.alto,
+        largo:dataForm.largo,
+        peso:dataForm.peso,
+        delicado:dataForm.delicado,
+        estado:dataForm.estado,
+        nombre_origen:dataForm.nombre_origen,
+        identificacion_origen:dataForm.identificacion_origen,
+        direccion_origen:dataForm.direccion_origen,
+        telefono_origen:dataForm.telefono_origen,
+        ciudad_origen:dataForm.ciudad_origen,
+        pais_origen:dataForm.pais_origen,
+        nombre_destino:dataForm.nombre_destino,
+        identificacion_destino:dataForm.identificacion_destino,
+        telefono_destino:dataForm.telefono_destino,
+        direccion_destino:dataForm.direccion_destino,
+        ciudad_destino:dataForm.ciudad_destino,
+        pais_destino:dataForm.pais_destino
+      }
+   console.log("dataForm",dataForm);
+   axios
+   .post("http://localhost:9000/api/pedidos", dataForm)
+   .then(response => console.log(response.data))
+  }
+ 
+
 
   return(
 
@@ -28,7 +59,7 @@ function Create() {
         cuarto=""
         enlacecua=""/>
 
-    <form onSubmit={handleSubmit(customSubmit)}>
+    <form>
     <div className="container">
       <div className = "contenedorPrincipalCreate" >
         
@@ -56,6 +87,7 @@ function Create() {
                             etiqueta= "Fecha"
                             id= "fecha_recogida"
                             tipo= "date"
+                            name= "fecha_recogida"
                             />
                           <div className="mb-3 row">
                             <div className="row align-items-center">
@@ -83,7 +115,8 @@ function Create() {
                               etiqueta= "Delicado" 
                               id= "delicado"
                               tipo= "text" 
-                              placeholder= "Si/No"/> 
+                              placeholder= "Si/No"
+                              name="delicado" /> 
                           </div>
 
                         <div className="col-4">
@@ -91,12 +124,14 @@ function Create() {
                             etiqueta= "Hora" 
                             id= "hora_recogida"
                             tipo= "time"
-                            placeholder="hh:mm" />
+                            placeholder="hh:mm" 
+                            name="hora_recogida" />
                           <LabelInput 
                             etiqueta= "Peso" 
                             id= "peso"
                             tipo= "number"
-                            placeholder="Kilogramos"/>
+                            placeholder="Kilogramos"
+                            name= "peso" />
                         </div>
                       </div>
 
@@ -113,27 +148,33 @@ function Create() {
                       <LabelInput 
                         etiqueta= "Nombre" 
                         id= "nombre_origen"
-                        tipo= "text"/>
+                        tipo= "text" 
+                        name="nombre_origen" />
                       <LabelInput 
                         etiqueta= "Cedula/NIT"
                         id= "identificacion_origen"
-                        tipo= "number" />
+                        tipo= "number"
+                        name= "identificacion_origen" />
                       <LabelInput 
                         etiqueta= "Telefono" 
                         id= "telefono_origen"
-                        tipo= "text"/>
+                        tipo= "text"
+                        name="telefono_origen" />
                       <LabelInput 
                         etiqueta= "Direccion"
                         id= "direccion_origen"
-                        tipo= "text" />
+                        tipo= "text" 
+                        name="direccion_origen" />
                       <LabelInput
                          etiqueta= "Ciudad"
                          id= "ciudad_origen"
-                         tipo= "text" />
+                         tipo= "text" 
+                         name="ciudad_origen" />
                       <LabelInput
                          etiqueta= "Pais" 
                          id= "pais_origen"
-                         tipo= "text"/>
+                         tipo= "text" 
+                         name="pais_origen" />
                       </>
                     }
                   /> 
@@ -146,27 +187,33 @@ function Create() {
                       <LabelInput 
                         etiqueta= "Nombre"
                         id= "nombre_destino"
-                        tipo= "text" />
+                        tipo= "text" 
+                        name= "nombre_destino" />
                       <LabelInput 
                         etiqueta= "Cedula/NIT" 
                         id= "identificacion_destino"
-                        tipo= "text"/>
+                        tipo= "text"
+                        name= "identificacion_destino"/>
                       <LabelInput 
                         etiqueta= "Telefono" 
                         id= "telefono_destino"
-                        tipo= "text"/>
+                        tipo= "text"
+                        name="telefono_destino" />
                       <LabelInput 
                         etiqueta= "Direccion"
                         id= "direccion_destino"
-                        tipo= "text" />
+                        tipo= "text" 
+                        name="direccion_destino" />
                       <LabelInput 
                         etiqueta= "Ciudad" 
                         id= "ciudad_destino"
-                        tipo= "text"/>
+                        tipo= "text"
+                        name= "ciudad_destino"/>
                       <LabelInput 
                         etiqueta= "Pais" 
                         id= "pais_destino"
-                        tipo= "text"/>
+                        tipo= "text"
+                        name= "pais_destino"/>
                       </>
                     }
                   />                 

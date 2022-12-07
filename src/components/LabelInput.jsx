@@ -8,7 +8,7 @@ function LabelInput(props){
       <div className="mb-3 row" >
         <label htmlFor="{input$(props.etiqueta)}" className="col-sm-2 col-form-label">{props.etiqueta}</label>
         <div className="col-sm-10">
-          <input className="form-control " id={props.id} type={props.tipo} placeholder={props.placeholder} required="required"  />        
+          <input className="form-control " id={props.id} name={props.name} type={props.tipo} placeholder={props.placeholder} required="required"  />        
         </div>
       </div> 
   );

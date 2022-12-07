@@ -6,15 +6,12 @@ import logoLineal170x50 from '../assets/logolineal170x50.png'
 import {useForm} from "react-hook-form";
 
 
-
 function Login() {
-
-
 
   return(
       <div className= "contenedorPrincipal" >
         
-        <form onSubmit={handleSubmit(customSubmit)}>
+        <form>
         <div className="contenedorCard" >
 
           <div className="contenedorImagen">
